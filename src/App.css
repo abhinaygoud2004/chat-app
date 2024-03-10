@@ -59,11 +59,17 @@ button {
   border-radius: 12px;
 }
 
-.message-container h1 {
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #333333;
+.message-container {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 12px;
+  max-height: 150px; /* Set a fixed height for the message container */
+  max-width: 500px;  /* Set a fixed width for the message container */
+  overflow-y: auto; /* Add scroll if content exceeds the container height */
+  margin-left: auto; /* Center the container horizontally */
+  margin-right: auto; /* Center the container horizontally */
 }
+
 .textarea {
   font-size: 16px;
 }
