@@ -29,7 +29,7 @@ function App() {
     return () => {
       socket.off("receive_message", handleReceiveMessage);
     };
-  }, [socket]); // Include 'socket' in the dependency array
+  }, []); // Include 'socket' in the dependency array
   
   
 
