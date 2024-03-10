@@ -20,15 +20,16 @@ function App() {
   }
 
   useEffect(() => {
-    socket.on("receive_message", (data) => {
+    const handleReceiveMessage = (data) => {
       setMessageReceived(data.message);
-    });
+    };
+    socket.on("receive_message", handleReceiveMessage);
   
     // Cleanup the event listener when the component unmounts
     return () => {
-      socket.off("receive_message");
+      socket.off("receive_message", handleReceiveMessage);
     };
-  }, [socket]);
+  }, [socket]); // Include 'socket' in the dependency array
   
 
   // useEffect(()=>{
