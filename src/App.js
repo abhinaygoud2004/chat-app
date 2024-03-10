@@ -19,11 +19,23 @@ function App() {
     }
   }
 
-  useEffect(()=>{
-    socket.on("receive_message",(data)=>{
-     setMessageReceived(data.message);
-    })
-  },[socket])
+  useEffect(() => {
+    socket.on("receive_message", (data) => {
+      setMessageReceived(data.message);
+    });
+  
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      socket.off("receive_message");
+    };
+  }, [socket]);
+  
+
+  // useEffect(()=>{
+  //   socket.on("receive_message",(data)=>{
+  //    setMessageReceived(data.message);
+  //   })
+  // },[socket])
 
 
   return (
