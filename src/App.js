@@ -27,7 +27,6 @@ function App() {
      setMessageReceived(data.message);
     })
   },[])
-
   return (
     <div className="app-container">
       <div className="content-container">
@@ -40,13 +39,16 @@ function App() {
           <button onClick={joinRoom}>Join Room</button>
         </div>
         <div className="input-container">
-            <input
-              placeholder="Type something..."
-              value={message}
-              onChange={(event) => setMessage(event.target.value)}
-            />
-            <button onClick={sendMessage}>Send Message</button>
-          </div>
+        <textarea
+        rows={2}
+          className="textarea"  // Add this class
+          placeholder="Type something..."
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
+        />
+
+          <button onClick={sendMessage}>Send Message</button>
+        </div>
         <div className="chat-container">
           <div className="message-container">
             <h1>Received Message:</h1>

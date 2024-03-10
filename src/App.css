@@ -4,18 +4,21 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: #f0f8ff; /* Light Sky Blue Background */
 }
 
 .app-container {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .content-container {
   max-width: 600px;
   width: 100%;
+  margin: 0 auto;
 }
 
 .join-container,
@@ -36,6 +39,8 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -45,6 +50,29 @@ button:hover {
 input,
 button {
   font-size: 16px;
+  padding: 8px; /* Adjusted padding for a cleaner look */
+}
+
+.message-container {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.message-container h1 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333333;
+}
+.textarea {
+  font-size: 16px;
+}
+
+
+
+.message-container p {
+  font-size: 16px;
+  color: #555555;
 }
 
 @media (max-width: 600px) {
