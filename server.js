@@ -6,7 +6,9 @@ const cors=require("cors")
 
 app.use(cors())
 const server=http.createServer(app)
-
+const path=require("path");
+//connect react build
+app.use(express.static(path.join(__dirname,'./build')))
 const io=new Server(server,{
     cors:{
         origin:"http://localhost:3000",
