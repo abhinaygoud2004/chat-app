@@ -28,19 +28,32 @@ function App() {
     })
   },[])
 
-
   return (
-    <div className="App">
-      <input placeholder="room no" onChange={(event)=>{
-        setRoom(event.target.value);
-      }} />
-      <button onClick={joinRoom}>Join Room</button>
-     <input placeholder='Type something...' onChange={(event)=>{
-      setMessage(event.target.value);
-     }}/>
-     <button onClick={sendMessage}>Send Message</button>
-    <h1>Message:</h1>
-    {messageReceived}
+    <div className="app-container">
+      <div className="content-container">
+        <div className="join-container">
+          <input
+            placeholder="Enter room number"
+            value={room}
+            onChange={(event) => setRoom(event.target.value)}
+          />
+          <button onClick={joinRoom}>Join Room</button>
+        </div>
+        <div className="input-container">
+            <input
+              placeholder="Type something..."
+              value={message}
+              onChange={(event) => setMessage(event.target.value)}
+            />
+            <button onClick={sendMessage}>Send Message</button>
+          </div>
+        <div className="chat-container">
+          <div className="message-container">
+            <h1>Received Message:</h1>
+            <p>{messageReceived}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
