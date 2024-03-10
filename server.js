@@ -4,11 +4,23 @@ const http=require("http");
 const {Server}=require("socket.io")
 const cors=require("cors")
 
-app.use(cors())
+// app.use(cors())
 const server=http.createServer(app)
 const path=require("path");
 //connect react build
 app.use(express.static(path.join(__dirname,'./build')))
+
+
+const corsOptions = {
+    origin: "https://abhi-chatapp.netlify.app",
+    // origin:"http://localhost:3000",
+    methods: ["GET", "POST"],
+    credentials: true,
+    optionsSuccessStatus: 204,
+  };
+  
+  app.use(cors(corsOptions));  
+
 const io=new Server(server,{
     cors:{
         // origin:"http://localhost:3000",
