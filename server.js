@@ -30,6 +30,6 @@ io.on("connection",(socket)=>{
 })
 
 
-server.listen("https://abhi-chatapp.netlify.app",()=>{
+server.listen(3001,()=>{
     console.log("Server is running")
 })
